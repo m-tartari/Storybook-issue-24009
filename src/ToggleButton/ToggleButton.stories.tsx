@@ -9,7 +9,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { StoryFn, Meta } from "@storybook/react";
-import { ToggleButton } from "components/atoms";
+import { ToggleButton } from ".";
 
 export default {
   title: "Atoms/Buttons/Toggle",
@@ -18,37 +18,23 @@ export default {
     size: {
       type: "string",
       options: ["large", "medium", "small"],
-      control: { type: "select" }
+      control: { type: "select" },
     },
     color: {
       type: "string",
-      options: [
-        "standard",
-        "primary",
-        "secondary",
-        "error",
-        "info",
-        "success",
-        "warning"
-      ],
-      control: { type: "select" }
+      options: ["standard", "primary", "secondary", "error", "info", "success", "warning"],
+      control: { type: "select" },
     },
     selected: { type: "boolean" },
-    disabled: { type: "boolean" }
-  }
+    disabled: { type: "boolean" },
+  },
 } as Meta<typeof ToggleButton>;
 
 const Template: StoryFn<typeof ToggleButton> = ({ children, ...args }) => {
-  const [selected, setSelected] = React.useState<boolean>(
-    args.selected || false
-  );
+  const [selected, setSelected] = React.useState<boolean>(args.selected || false);
 
   return (
-    <ToggleButton
-      selected={selected}
-      onChange={() => setSelected(!selected)}
-      {...args}
-    >
+    <ToggleButton selected={selected} onChange={() => setSelected(!selected)} {...args}>
       {children}
     </ToggleButton>
   );
@@ -68,7 +54,7 @@ const Div: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         flexWrap: "wrap",
         gap: "5px",
         marginTop: "-5px",
-        marginBottom: "-5px"
+        marginBottom: "-5px",
       }}
     >
       {children}
@@ -76,159 +62,59 @@ const Div: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-const TemplateVariant: StoryFn<typeof ToggleButton> = ({
-  disabled,
-  size,
-  ...args
-}) => {
-  const [selected, setSelected] = React.useState<boolean>(
-    args.selected || false
-  );
+const TemplateVariant: StoryFn<typeof ToggleButton> = ({ disabled, size, ...args }) => {
+  const [selected, setSelected] = React.useState<boolean>(args.selected || false);
 
   return (
     <div>
       <Div>
-        <ToggleButton
-          {...args}
-          size="large"
-          data-testid="large-standard"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" data-testid="large-standard" selected={selected} onChange={() => setSelected(!selected)}>
           Default
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="primary"
-          data-testid="large-primary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="primary" data-testid="large-primary" selected={selected} onChange={() => setSelected(!selected)}>
           Primary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="secondary"
-          data-testid="large-secondary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="secondary" data-testid="large-secondary" selected={selected} onChange={() => setSelected(!selected)}>
           Secondary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="error"
-          data-testid="large-error"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="error" data-testid="large-error" selected={selected} onChange={() => setSelected(!selected)}>
           Error
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="info"
-          data-testid="large-info"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="info" data-testid="large-info" selected={selected} onChange={() => setSelected(!selected)}>
           Info
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="success"
-          data-testid="large-success"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="success" data-testid="large-success" selected={selected} onChange={() => setSelected(!selected)}>
           Success
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="large"
-          color="warning"
-          data-testid="large-warning"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="large" color="warning" data-testid="large-warning" selected={selected} onChange={() => setSelected(!selected)}>
           Warning
         </ToggleButton>
-        <ToggleButton
-          size="large"
-          data-testid="large-disabled"
-          disabled
-          {...args}
-        >
+        <ToggleButton size="large" data-testid="large-disabled" disabled {...args}>
           Disabled
         </ToggleButton>
       </Div>
       <br />
       <Div>
-        <ToggleButton
-          {...args}
-          data-testid="medium-standard"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} data-testid="medium-standard" selected={selected} onChange={() => setSelected(!selected)}>
           Default
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          color="primary"
-          data-testid="medium-primary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="primary" data-testid="medium-primary" selected={selected} onChange={() => setSelected(!selected)}>
           Primary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          color="secondary"
-          data-testid="medium-secondary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="secondary" data-testid="medium-secondary" selected={selected} onChange={() => setSelected(!selected)}>
           Secondary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          color="error"
-          data-testid="medium-error"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="error" data-testid="medium-error" selected={selected} onChange={() => setSelected(!selected)}>
           Error
         </ToggleButton>
 
-        <ToggleButton
-          {...args}
-          color="info"
-          data-testid="medium-info"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="info" data-testid="medium-info" selected={selected} onChange={() => setSelected(!selected)}>
           Info
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          color="success"
-          data-testid="medium-success"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="success" data-testid="medium-success" selected={selected} onChange={() => setSelected(!selected)}>
           Success
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          color="warning"
-          data-testid="medium-warning"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} color="warning" data-testid="medium-warning" selected={selected} onChange={() => setSelected(!selected)}>
           Warning
         </ToggleButton>
         <ToggleButton {...args} data-testid="medium-disabled" disabled>
@@ -237,82 +123,28 @@ const TemplateVariant: StoryFn<typeof ToggleButton> = ({
       </Div>
       <br />
       <Div>
-        <ToggleButton
-          {...args}
-          size="small"
-          data-testid="small-standard"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-          {...args}
-        >
+        <ToggleButton {...args} size="small" data-testid="small-standard" selected={selected} onChange={() => setSelected(!selected)} {...args}>
           Default
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="primary"
-          data-testid="small-primary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="primary" data-testid="small-primary" selected={selected} onChange={() => setSelected(!selected)}>
           Primary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="secondary"
-          data-testid="small-secondary"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="secondary" data-testid="small-secondary" selected={selected} onChange={() => setSelected(!selected)}>
           Secondary
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="error"
-          data-testid="small-error"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="error" data-testid="small-error" selected={selected} onChange={() => setSelected(!selected)}>
           Error
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="info"
-          data-testid="small-info"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="info" data-testid="small-info" selected={selected} onChange={() => setSelected(!selected)}>
           Info
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="success"
-          data-testid="small-success"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="success" data-testid="small-success" selected={selected} onChange={() => setSelected(!selected)}>
           Success
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          color="warning"
-          data-testid="small-warning"
-          selected={selected}
-          onChange={() => setSelected(!selected)}
-        >
+        <ToggleButton {...args} size="small" color="warning" data-testid="small-warning" selected={selected} onChange={() => setSelected(!selected)}>
           Warning
         </ToggleButton>
-        <ToggleButton
-          {...args}
-          size="small"
-          data-testid="small-disabled"
-          disabled
-        >
+        <ToggleButton {...args} size="small" data-testid="small-disabled" disabled>
           Disabled
         </ToggleButton>
       </Div>
