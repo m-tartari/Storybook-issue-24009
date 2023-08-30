@@ -1,20 +1,25 @@
-# Storybook v7.4.0 bad `import { composeStories } from "@storybook/react"` while testing
+# [BUG] Storybook issue 24009
+This is a simplified project for storybookjs/storybook#24009.
 
-To reproduce the error install dependecies and run the tests:
+Bad `import { composeStories } from "@storybook/react"` while testing in Storybook v7.4.0 
+
+## Set-up
+To reproduce the error install dependencies and run the tests:
 
 ```shell
 npm ci
-npm run test
+npm run test -- --watchAll=false
 ```
 
 or
 
 ```shell
 yarn install --frozen-lockfile
-yarn runtest
+yarn run test -- --watchAll=false
 ```
 
-the test fails with:
+## Results
+The test fails with:
 
 ```
  FAIL  src/ToggleButton/ToggleButton.test.tsx
