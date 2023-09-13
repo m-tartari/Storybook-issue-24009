@@ -1,7 +1,7 @@
-# [BUG] Storybook issue 24009
-This is a simplified project for storybookjs/storybook#24009.
+# [BUG] Storybook issue 24009 (fixed in v7.4.1)
+This is a simplified project for storybookjs/storybook#24009. 
 
-Bad `import { composeStories } from "@storybook/react"` while testing in Storybook v7.4.0 
+Bad `import { composeStories } from "@storybook/react"` while testing in Storybook v7.4.0
 
 ## Set-up
 To reproduce the error install dependencies and run the tests:
